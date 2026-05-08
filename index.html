@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flashcard Mastery</h1>
+        
+        <div class="question-selector">
+            <label for="questionSetSelect">Select Question Set:</label>
+            <select id="questionSetSelect">
+                <option value="general">General Knowledge</option>
+                <option value="behavioral">Behavioral</option>
+            </select>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-label">Current Card:</span>
+                <span class="stat-value" id="cardCount">-/-</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Average Mastery:</span>
+                <span class="stat-value" id="avgMastery">0.0</span>
+            </div>
+        </div>
+
+        <div class="flashcard-container">
+            <div class="flashcard" id="flashcard">
+                <div class="mastery-badge" id="masteryBadge">0</div>
+                <div class="flashcard-content">
+                    <p class="flashcard-text" id="flashcardText">Loading...</p>
+                </div>
+                <p class="flip-hint">Click to flip</p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="btn btn-wrong" id="wrongBtn">Wrong</button>
+            <button class="btn btn-right" id="rightBtn">Right</button>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-reset" id="resetBtn">Reset All Progress</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
