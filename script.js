@@ -631,8 +631,50 @@ const questionSets = {
         },
         {  
             "id": 2,
-            "question": "insert text here",
-            "answer": "insert text here",
+            "question": "Whats the first thing you do when working with a new dataset?",
+            "answer": "Understand the data model and buisness context. Review the schema, identiy key tables, relationships, and how data flows. Inspect sample data checking for nulls, duplicates, or inconsistent format",
+            "mastery": 0    
+        },
+        {  
+            "id": 3,
+            "question": "How would you handle missing values in a dataset?",
+            "answer": "Identify the pattern of missing values, then decide on an appropriate strategy such as removing rows with missing values or inputing with mean/median/mode.",
+            "mastery": 0    
+        },
+        {  
+            "id": 4,
+            "question": "How would you troubleshoot a slow SQL query?",
+            "answer": "Identify where the slowdown is happening using timing information. Look for missing indexes, unecessary joins, selecting too many columns, or where filtering is occuring. I can also check if the query is scanning entire tables when it could be using indexes to be efficient",
+            "mastery": 0    
+        },
+        {  
+            "id": 5,
+            "question": "What's the difference between a primary and foreign key?",
+            "answer": "A primary key identifies each record in a table. A foreign key creates relationships by referencing primary keys in other tables",
+            "mastery": 0    
+        },
+        {  
+            "id": 6,
+            "question": "How would you design a table for storing customer orders?",
+            "answer": "Normalize the table into customers, orders, and order_items. Customers stores customer information, orders stores order level data like timestamps, and orderItems stores the individual products in each order.",
+            "mastery": 0    
+        },
+        {  
+            "id": 7,
+            "question": "Whats an index?",
+            "answer": "An index allows a database to find rows more efficiently without scanning the entire table.",
+            "mastery": 0    
+        },
+        {  
+            "id": 8,
+            "question": "When would you use an index?",
+            "answer": "Use indexes for columns frequently used in WHERE clauses, JOIN, or ORDER BY",
+            "mastery": 0    
+        },
+        {  
+            "id": 9,
+            "question": "How would you handle bad or missing data in a pipeline?",
+            "answer": "Identify if the missing data is expected or a system issue. I could filter invalid rows, add validation checks, or fill missing values with defaults.",
             "mastery": 0    
         },
     ],
