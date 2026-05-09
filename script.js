@@ -542,6 +542,86 @@ const questionSets = {
             "mastery": 0
         }
     ],
+    etl: [
+        {  
+            "id": 1,
+            "question": "What does ETL stand for?",
+            "answer": "Extract, Transform, Load",
+            "mastery": 0    
+        },
+        {  
+            "id": 2,
+            "question": "What does ELT stand for?",
+            "answer": "Extract, Load, Transform",
+            "mastery": 0    
+        },
+        {  
+            "id": 3,
+            "question": "What is ETL?",
+            "answer": "A way to pull data from one source to another, while cleaning/transforming it along the way.",
+            "mastery": 0    
+        },
+        {  
+            "id": 4,
+            "question": "What is ELT",
+            "answer": "A way to pull data from one source to another, loading it into the target system before transforming/cleaning it",
+            "mastery": 0    
+        },
+        {  
+            "id": 5,
+            "question": "What is the difference between ETL and ELT?",
+            "answer": "ETL transforms data before loading it, while ELT loads raw data into the target system then transforms it",
+            "mastery": 0    
+        },
+        {  
+            "id": 6,
+            "question": "What are the advantages of ETL?",
+            "answer": "Data is clean before it arrives, so it can be used immediately. It is better for sensitive data because it can be masked/filtered before it lands",
+            "mastery": 0    
+        },
+        {  
+            "id": 7,
+            "question": "What are the disadvantages of ETL?",
+            "answer": "It is slower, since data must be cleaned before being loaded. It is more complex, because data is cleaned on a separate system.",
+            "mastery": 0    
+        },
+        {  
+            "id": 8,
+            "question": "What are the advantages of ELT?",
+            "answer": "Data is loaded faster. Modern warehouses like snowflake and BigQuery are powerful enough to clean data cheap and quick inside themselves",
+            "mastery": 0    
+        },
+        {  
+            "id": 9,
+            "question": "What are the disadvantages of ELT?",
+            "answer": "Raw and messy data is in the warehouse. A powerful destination system is needed to handle transformations.",
+            "mastery": 0    
+        },
+        {  
+            "id": 10,
+            "question": "When would you choose ETL over ELT?",
+            "answer": "ETL is good for security or strict data compliance. If data need to be modified or if storage costs need to be kept low",
+            "mastery": 0    
+        },
+        {  
+            "id": 11,
+            "question": "When would you choose ELT over ETL?",
+            "answer": "ELT is good when there is a high volume of data, speed is necessary, and the original raw data may be needed",
+            "mastery": 0    
+        },
+        {  
+            "id": 12,
+            "question": "What is data lineage?",
+            "answer": "Data lineage is the process of tracking the lifecycle of data from its origins through transformations to its destination",
+            "mastery": 0    
+        },
+        {  
+            "id": 13,
+            "question": "Why is data lineage important?",
+            "answer": "Helps trace back errors, helps understand what systems will break if a source changes, helps with compliance",
+            "mastery": 0    
+        },
+    ],
     practical: [
         {  
             "id": 1,
@@ -551,8 +631,40 @@ const questionSets = {
         },
         {  
             "id": 2,
-            "question": "",
-            "answer": "",
+            "question": "insert text here",
+            "answer": "insert text here",
+            "mastery": 0    
+        },
+    ],
+    data_lakes: [
+        {  
+            "id": 1,
+            "question": "What is a data warehouse?",
+            "answer": "Stores data from many system for business intelligence and analytics",
+            "mastery": 0    
+        },
+        {  
+            "id": 2,
+            "question": "What is a database?",
+            "answer": "Stores current organized data for user use",
+            "mastery": 0    
+        },
+        {  
+            "id": 3,
+            "question": "What is a data lake?",
+            "answer": "A place to store all raw data",
+            "mastery": 0    
+        },
+        {  
+            "id": 4,
+            "question": "What is the difference between a data lake and a data warehouse?",
+            "answer": "A data warehouse stored clean data for analytics, a data lake stores all raw data for any future use",
+            "mastery": 0    
+        },
+        {  
+            "id": 5,
+            "question": "Why do companies use data warehouses?",
+            "answer": "They are useful for centralized analysis, combining multiple systems, and improving query performance for analytics",
             "mastery": 0    
         },
     ],
