@@ -409,6 +409,152 @@ const questionSets = {
             "answer": "The DBT figures out the right order to run the .sql files, creates the tables from those queries, runs checks, and tracks what changed",
             "mastery": 0    
         },
+        {  
+            "id": 4,
+            "question": "What is a benefit of dbt?",
+            "answer": "dbt allows you to set up better process out of the box for data",
+            "mastery": 0    
+        },
+        {  
+            "id": 5,
+            "question": "Give an example of a project in which dbt could be useful",
+            "answer": "An online retailer could sell through multiple storefronts (such as Amazon, its own website, and a mobile app). Every source formats data differently. dbt can manage transformation by cleaning up incoming tables, creating reusable business definitions, testing assumptions (such as uniqueness or non-nullability), and generating documentation such as a dependency graph.",
+            "mastery": 0    
+        },
+        {  
+            "id": 6,
+            "question": "How does dbt simplify the process of transforming data?",
+            "answer": "It turns having random sql scripts everywhere into its own maintainable layer, like any other application codebase",
+            "mastery": 0    
+        },
+        {  
+            "id": 7,
+            "question": "How does dbt work out of the box?",
+            "answer": "It can quickly initialize a framework. Uing things like the models folder, sql models can be developed to represent tables in the target database. It compiles the sql that could have jinja in it into an actual sql statement that it will hold in the targets folder. The targets folder takes that sql, runs it against your database and creates tables, run tests, and generates documentation.",
+            "mastery": 0    
+        },
+        {  
+            "id": 8,
+            "question": "What are some best practices for using dbt?",
+            "answer": "Some best practices include organizing models logically, using variables and macros for reusability, writing comprehensive tests, and maintaining up-to-date documentation.",
+            "mastery": 0    
+        },
+        {  
+            "id": 9,
+            "question": "How can you test your dbt models?",
+            "answer": "You can write tests in dbt to validate your data transformations. These tests can check for uniqueness, non-nullability, and other business rules.",
+            "mastery": 0    
+        },
+        {  
+            "id": 10,
+            "question": "What is the purpose of the targets folder in dbt?",
+            "answer": "The targets folder holds the compiled SQL statements that dbt generates from your models. When you run dbt, it takes these compiled SQL files and executes them against your database to create tables, run tests, and generate documentation.",
+            "mastery": 0    
+        },
+        {  
+            "id": 11,
+            "question": "What is jinja and how is it used in dbt?",
+            "answer": "Jinja is a templating language that allows you to write dynamic SQL code in dbt. It enables you to create reusable and maintainable SQL models by incorporating variables, conditionals, and loops.",
+            "mastery": 0    
+        },
+        {  
+            "id": 12,
+            "question": "What does it mean that jinja is a templating language?",
+            "answer": "It allows you to write a document with placeholders and logic that get turned into final text later.",
+            "mastery": 0    
+        },
+        {
+            "id": 13,
+            "question": "What is the ref() function in dbt?",
+            "answer": "ref() is how you reference another model inside a dbt project. For example, SELECT * FROM {{ ref('my_model') }}. Using ref() instead of hardcoding a table name lets dbt automatically build the dependency graph and run models in the correct order.",
+            "mastery": 0
+        },
+        {
+            "id": 14,
+            "question": "What is the source() function in dbt?",
+            "answer": "source() is how you reference raw source tables that exist in your database but were not created by dbt (e.g., tables loaded by an ingestion tool). For example, {{ source('stripe', 'payments') }}. Declaring sources in schema.yml lets dbt track freshness and document where raw data comes from.",
+            "mastery": 0
+        },
+        {
+            "id": 15,
+            "question": "What is the key difference between ref() and source()?",
+            "answer": "ref() points to a model that dbt itself built. source() points to a raw table that exists in the database outside of dbt, such as data loaded by an ingestion pipeline. ref() is for internal dependencies; source() is for the starting point of your data.",
+            "mastery": 0
+        },
+        {
+            "id": 16,
+            "question": "What is a model materialization in dbt?",
+            "answer": "Materialization controls how dbt physically creates a model in the database. The four built-in options are: view (a virtual query, no data stored), table (a full physical table rebuilt every run), incremental (only new or changed rows are added to an existing table), and ephemeral (no object is created in the database; the model is injected as a CTE into models that reference it).",
+            "mastery": 0
+        },
+        {
+            "id": 17,
+            "question": "When would you use an incremental materialization?",
+            "answer": "When a table is large and rebuilding it fully every run would be too slow or expensive. Incremental models only process new or updated rows since the last run, making them much more efficient for large datasets like event logs or transaction histories.",
+            "mastery": 0
+        },
+        {
+            "id": 18,
+            "question": "When would you use an ephemeral materialization?",
+            "answer": "When you want to break a complex transformation into smaller logical steps without creating unnecessary objects in the database. Ephemeral models act as reusable CTEs injected directly into the SQL of any model that references them via ref().",
+            "mastery": 0
+        },
+        {
+            "id": 19,
+            "question": "What is the DAG in dbt?",
+            "answer": "DAG stands for Directed Acyclic Graph. dbt automatically builds a DAG by analyzing all the ref() and source() calls across your models. This graph determines the correct execution order — a model will not run until all the models it depends on have finished. It also prevents circular dependencies.",
+            "mastery": 0
+        },
+        {
+            "id": 20,
+            "question": "How does dbt use the DAG in practice?",
+            "answer": "When you run dbt, it reads all your models, traces their ref() dependencies, and builds the DAG. It then executes models in topological order — upstream models first, downstream models after. dbt can also run independent branches of the DAG in parallel to save time.",
+            "mastery": 0
+        },
+        {
+            "id": 21,
+            "question": "What is schema.yml in dbt?",
+            "answer": "schema.yml is a YAML configuration file where you define metadata for your models, sources, and columns. This includes descriptions for documentation, and test definitions such as uniqueness or non-null constraints. It is the central place where dbt tests and docs are declared.",
+            "mastery": 0
+        },
+        {
+            "id": 22,
+            "question": "Give an example of what a model entry in schema.yml looks like",
+            "answer": "A model entry names the model, gives it a description, then lists columns with their own descriptions and tests. For example, a column named order_id might be described as 'the primary key' and have the tests unique and not_null applied to it. dbt reads this file and generates both documentation and test queries from it.",
+            "mastery": 0
+        },
+        {
+            "id": 23,
+            "question": "What are the four built-in generic tests in dbt?",
+            "answer": "1. unique — asserts every value in a column is distinct. 2. not_null — asserts no value in a column is null. 3. accepted_values — asserts every value in a column belongs to a defined list. 4. relationships — asserts every value in a column exists as a key in another model or table, enforcing referential integrity.",
+            "mastery": 0
+        },
+        {
+            "id": 24,
+            "question": "What is the difference between dbt run, dbt test, and dbt build?",
+            "answer": "dbt run executes your models and creates or updates the tables and views in your database. dbt test runs the tests defined in schema.yml to validate data quality, but does not build any models. dbt build does both in the correct DAG order — for each node it runs the model first, then immediately tests it before moving downstream.",
+            "mastery": 0
+        },
+        {
+            "id": 25,
+            "question": "Why would you prefer dbt build over running dbt run and dbt test separately?",
+            "answer": "dbt build respects the DAG at the node level, meaning it tests each model before passing its output to downstream models. If a test fails, dbt can stop before bad data propagates further down the pipeline. Running dbt run followed by dbt test separately would build the entire graph first, potentially letting bad data flow through before any tests catch it.",
+            "mastery": 0
+        }
+    ],
+    practical: [
+        {  
+            "id": 1,
+            "question": "Given a CSV of sensor readings, how would you define duplicate records?",
+            "answer": "Define criteria for duplicates, such as identical timestamp and sensor ID, or identical values across all columns. df.drop_duplicates() can be used to remove duplicates based on these criteria.",
+            "mastery": 0    
+        },
+        {  
+            "id": 2,
+            "question": "",
+            "answer": "",
+            "mastery": 0    
+        },
     ],
     behavioral: [
         {
