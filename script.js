@@ -390,6 +390,26 @@ const questionSets = {
     
     ],
 
+    dbt: [
+        {  
+            "id": 1,
+            "question": "What does dbt stand for?",
+            "answer": "Data Build Tool",
+            "mastery": 0    
+        },
+        {  
+            "id": 2,
+            "question": "What is DBT?",
+            "answer": "An open source tool you can use to manage a large collection of SQL queries in an organized way, and to help with testing and documentation.",
+            "mastery": 0    
+        },
+        {  
+            "id": 3,
+            "question": "How do .sql files interact with DBT?",
+            "answer": "The DBT figures out the right order to run the .sql files, creates the tables from those queries, runs checks, and tracks what changed",
+            "mastery": 0    
+        },
+    ],
     behavioral: [
         {
             "id": 1,
